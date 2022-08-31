@@ -1,0 +1,78 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid"></div>
+    <h1>CardPage</h1>
+</nav>
+
+<table class="table">
+    <thead>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Nationality</th>
+        <th>Title</th>
+        <th>Certificates</th>
+        <th style="width: 25%;" class="text-center">DaysOnBoard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            DailyRate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            TotalIncome</th>
+        <th>Currency Selection</th>
+        <th>Currency</th>   
+    </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+              <td>
+                <div   >
+                  {{user.Firstname}}
+                </div>
+               
+            </td>
+            <td>
+              <div >
+                  {{user.Lastname}}
+              </div>
+              
+          </td>
+            <td>
+              <div >
+                {{user.Nationality}}
+            </div>
+            
+            </td>
+            <td>
+              <div >
+                {{user.Title}}
+            </div>
+                
+                <app-certificates></app-certificates>
+                
+                <td><form oninput="res.value=parseInt(a.value)*parseInt(b.value);">
+   
+                  <input type="number" name="a" value=""/>
+                  
+                  
+                  <input type="number" name="b" value="">
+                  
+                  <output type="number" name="res"></output>
+                </form></td>
+                
+                
+                    <td>
+                        <div>
+                         <button><mat-button-toggle-group #toggleGroup1="matButtonToggleGroup">
+                          <mat-button-toggle value="USD ">
+                            USD
+                          </mat-button-toggle>
+                          <mat-button-toggle value="EUR ">
+                            EUR
+                          </mat-button-toggle>
+                        </mat-button-toggle-group>
+                        
+                        </button>
+                          
+                        </div>
+                      <td><h3> {{ toggleGroup1.value }}</h3></td> 
+                   
+                
+                
+              <router-outlet></router-outlet>
+            </tr>
+        </tbody> 
+</table>

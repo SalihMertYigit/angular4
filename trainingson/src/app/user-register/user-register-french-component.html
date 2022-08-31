@@ -1,0 +1,43 @@
+<div class="container-fluid"></div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+AddCrew
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">User Register</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">FirstName</label>
+            <input type="email" class="form-control" [(ngModel)]="userObj.Firstname" name="FirstName">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">LastName</label>
+            <input type="email" class="form-control" [(ngModel)]="userObj.Lastname" name="LastName">
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Nationality</label>
+          <input type="email" class="form-control" [(ngModel)]="userObj.Nationality" name="Nationality" >
+        </div>
+      
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Title</label>
+          <input type="email" class="form-control" [(ngModel)]="userObj.Title" name="Title" >
+        </div>
+          
+        
+        <button type="button" (click)="saveUser()" class="btn btn-primary">Save User</button>
+      </form>
+    
+  </div>
+</div>
+</div>

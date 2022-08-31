@@ -1,0 +1,99 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid"></div>
+    <h1>Page de l'équipage</h1>
+    <app-user-register></app-user-register>
+
+</nav>
+<div class="row">
+    <div class="col-12">
+        <table class="table  table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom de famille</th>
+                    <th>Nationalité</th>
+                    <th>Titre</th>
+                    <th style="width: 26%;" class="text-left">Jours à bord
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Taux journalier
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Revenu total</th>
+                    <th>Devise sélectionner</th>
+                    <th>Devise</th>
+                    <th style="width: 15%;" class="text-center">Action</th>
+                    <th>Certificats</th>
+                    <th>Page de la carte</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList">
+
+                    <td>
+                        <div   >
+                          {{user.Firstname}}
+                        </div>
+                       
+                    </td>
+                    <td>
+                      <div >
+                          {{user.Lastname}}
+                      </div>
+                      
+                  </td>
+                    <td>
+                      <div >
+                        {{user.Nationality}}
+                    </div>
+                    
+                    </td>
+                    <td>
+                      <div >
+                        {{user.Title}}
+                    </div>
+                    <td>
+                        <form oninput="res.value=parseInt(a.value)*parseInt(b.value);">
+
+                            <input type="number" name="a" value="" />
+
+
+                            <input type="number" name="b" value="">
+
+                            <output type="number" name="res"></output>
+                        </form>
+                    </td>
+
+                    <td>
+                        <div>
+                         <button><mat-button-toggle-group #toggleGroup1="matButtonToggleGroup">
+                          <mat-button-toggle value="USD ">
+                            USD
+                          </mat-button-toggle>
+                          <mat-button-toggle value="EUR ">
+                            EUR
+                          </mat-button-toggle>
+                        </mat-button-toggle-group>
+                        
+                        </button>
+                          
+                        </div>
+                      <td><h3> {{ toggleGroup1.value }}</h3></td> 
+
+                    <td style="width: 15%;" class="text-center">
+                        <div>
+                            <button class="btn btn-sm btn-danger" (click)="delete(user.userId)">Effacer</button>
+                        </div>
+
+
+                    </td>
+                    <th>
+                        <app-certificates></app-certificates>
+                    </th>
+                    <th>
+                        <button type="button" class="btn btn-link" routerLink="/cardPages">Page de la carte</button>
+                    </th>
+                    <router-outlet></router-outlet>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
