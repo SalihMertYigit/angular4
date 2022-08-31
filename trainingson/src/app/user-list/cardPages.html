@@ -18,30 +18,31 @@
     </thead>
         <tbody>
             <tr *ngFor="let user of userList">
-              <td>
-                <div   >
-                  {{user.Firstname}}
-                </div>
-               
-            </td>
-            <td>
-              <div >
-                  {{user.Lastname}}
-              </div>
-              
-          </td>
-            <td>
-              <div >
-                {{user.Nationality}}
-            </div>
-            
-            </td>
-            <td>
-              <div >
-                {{user.Title}}
-            </div>
+                <td>
+                      <div   >
+                        {{user.Firstname}}
+                      </div>
+                     
+                  </td>
+                  <td>
+                    <div >
+                        {{user.Lastname}}
+                    </div>
+                    
+                </td>
+                  <td>
+                    <div >
+                      {{user.Nationality}}
+                  </div>
+                  
+                  </td>
+                  <td>
+                    <div >
+                      {{user.Title}}
+                  </div>
                 
-                <app-certificates></app-certificates>
+                </td>
+                <td><app-certificates></app-certificates></td> 
                 
                 <td><form oninput="res.value=parseInt(a.value)*parseInt(b.value);">
    
